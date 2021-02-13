@@ -18,7 +18,8 @@
     {
         require "dbconnection.php";
         $id = $_SESSION['id'];
-        $topicquery = $curLink->query("SELECT * FROM `topics` WHERE user_id='$id'");
+        $topicquery = $curLink->query("SELECT * FROM `topics` WHERE user_id='$id'") or die(printf(mysqli_error($curLink)));
+        
         $topics = $topicquery->fetch_all(MYSQLI_ASSOC);
 
         if (isset($_POST['topicname']))

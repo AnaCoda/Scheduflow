@@ -23,7 +23,7 @@
 
         if (isset($_POST['topicname']))
         {
-            $topicname = $_POST['topicname'];
+            $topicname = $curLink->real_escape_string($_POST['topicname']);
             $curLink->query("INSERT INTO topics (user_id, topicname) VALUES(
                 '".$_SESSION['id']."',
                 '$topicname')") or die(mysqli_error($curLink));

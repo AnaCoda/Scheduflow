@@ -17,7 +17,7 @@ CREATE TABLE `topics` (
 CREATE TABLE `events` (
   `event_id` int(10) NOT NULL AUTO_INCREMENT,
   `eventname` text NOT NULL,
-  `eventtime` DATE NOT NULL, /*Only if the eventtype is Until(2)*/
+  `eventtime` DATE NOT NULL, /*Only if the eventtype is Day(0) or sUntil(2)*/
   `eventtype` int(1) NOT NULL, /*(0)Single day, deletes itself after completion. (1)Indefinite, requires user deletion. (2)Until, will delete after certain calendar day*/
   PRIMARY KEY (`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

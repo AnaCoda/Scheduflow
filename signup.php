@@ -36,8 +36,9 @@
                 }
                 else
                 {
+                    $dbpass = file_get_contents('password.txt');
                     // Connect to the SQL database (for the prototype, it's being hosted locally)
-                    $curLink = mysqli_connect("localhost", "root", "SOMEPASSWORD", "scheduflow_db") or die(printf(mysqli_error())); // Connect to database server(localhost) with username and password.
+                    $curLink = mysqli_connect("localhost", "root", $dbpass, "scheduflow_db") or die(printf(mysqli_error($curLink))); // Connect to database server(localhost) with username and password.
                     
                     // Prevent SQL injection
                     $name = $curLink->real_escape_string($name);

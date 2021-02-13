@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/index.css">
 	<script src="https://kit.fontawesome.com/38b15697bc.js" crossorigin="anonymous"></script>
 	<title>Document</title>
 </head>
@@ -26,9 +27,9 @@
 	</nav>
 	<main class="content">
 		<h1>Scheduflow</h1>
-		<p>The thing that helps students, from students</p>
-		<button>Sign Up</button>
-		<button>Log In</button>
+		<p>Helping students (and teachers) keep track of their lives</p>
+		<a href="/login.php" class="form-input submit-button">Login</a>
+		<a href="/signup.php" class="form-input submit-button">Signup</a>
 	</main>
 </body>
 </html>

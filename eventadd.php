@@ -35,7 +35,6 @@
             <input type="button" name="until" value="Everyday Until">
             </div><br>
             <h1>Step Three: Choose a Topic</h1>
-          
           <?php 
           $temp = $curLink->query("SELECT * FROM `topics`");
           $topics = $temp->fetch_all(MYSQLI_ASSOC);

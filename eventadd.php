@@ -14,7 +14,7 @@
           ?><h1>Event name <?php echo $eventname?></h1>
             <?php
           if(isset($_POST['selectedtopic'])/* && isset($eventname) && $eventname != ''*/){
-            ?><h1>Event name<?php echo $eventname?></h1>
+            ?><h1>Event name <?php echo $eventname?></h1>
             <?php
             $eventname = $_POST['eventname'];
             $selectedtopic = $_POST['selectedtopic'];
@@ -43,9 +43,10 @@
           <!--Jim-senpai pls add css and classes thx-->
             
               <input type="submit" name="selectedtopic" value="<?= $t['topicname']?>">
-            </form>
+            
           </div>
         <?php }
+        ?></form><?php
         }
         else
         {

@@ -33,12 +33,10 @@ h1 {
 
 .bar {
     background: #ff413d;
-    width: 0;
+    width: 0px;
     margin: .25em 0;
     color: #fff;
     position: relative;
-    transition: width 2s, background .2s;
-    -webkit-transform: translate3d(0, 0, 0);
     clear: both;
 }
 

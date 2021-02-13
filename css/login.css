@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  width: 50%;
+  top: 30%;
+  left: 10%;
+}
+
+.container h3 {
+  font-size: 4em;
+  text-transform: capitalize;
+}
+
+.container p {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  margin-bottom: 1em;
+}
+
+.container .form-input {
+  width: 70%;
+  height: 10%;
+  padding: 0.3em;
+  margin-bottom: 1em;
+  font-size: 1em;
+  line-height: 0;
+  border-width: 3px;
+  background: white;
+  border-style: solid;
+  border-color: #333;
+  border-radius: 10px;
+  -webkit-transition: border-color 500ms;
+  transition: border-color 500ms;
+}
+
+.container .form-input:focus {
+  outline: 0;
+  border-color: #036bb1;
+}
+
+.container .submit-button {
+  height: 2.4em;
+  width: calc(70% + 1em);
+}
+/*# sourceMappingURL=login.css.map */

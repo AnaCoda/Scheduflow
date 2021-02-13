@@ -8,8 +8,7 @@
     <div id="wrap">
          
         <!-- start php code -->
-        <?php
-        $dbpass = file_get_contents('password.txt');
+        <?php require "dbconnection.php";
         if(isset($_POST['uname']) && !empty($_POST['uname']) AND isset($_POST['email']) && !empty($_POST['email']))
         {
             // Form Submitted

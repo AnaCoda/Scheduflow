@@ -8,14 +8,12 @@
     <div id="wrap">
          
         <!-- start php code -->
-        <?php
+        <?php require "dbconnection.php";
         session_start(); // Access session variables for login
         // If the form is posted with the values
         if(isset($_POST['uname']) && !empty($_POST['uname']) AND isset($_POST['pass']) && !empty($_POST['pass']))
         {
-            $dbpass = file_get_contents('password.txt');
             // Connect to the SQL database (for the prototype, it's being hosted locally)
-            $curLink = mysqli_connect("localhost", "root", $dbpass, "scheduflow_db") or die(printf(mysqli_error($curLink))); // Connect to database server(localhost) with username and password.
             $username = $curLink->real_escape_string($_POST['uname']); // Set variable for the username (escape string to prevent injection)
             $password = $curLink->real_escape_string(md5($_POST['pass']));  // Set variable for the password and hash it
             $search = $curLink->query("SELECT * FROM users WHERE username='".$username."' AND password='".$password."'") or die(mysqli_error($curLink)); 

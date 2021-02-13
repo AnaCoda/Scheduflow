@@ -67,3 +67,12 @@ h1 {
     font-size: .75em;
     font-weight: bold;
 }
+
+.countx {
+    position: absolute;
+    right: .25em;
+    top: .75em;
+    padding: .15em;
+    font-size: .75em;
+    font-weight: bold;
+}

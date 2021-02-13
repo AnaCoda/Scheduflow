@@ -5,7 +5,7 @@ setTimeout(function start() {
     function progress(timeleft, timetotal, $element) {
 
 
-        var progressBarWidth = timeleft * 10;
+        var progressBarWidth = timeleft * 10 + 112;
         console.log(progressBarWidth);
         $element.animate({ width: progressBarWidth }, 1000);
         $element.append('<span class="count"></span>')
@@ -22,19 +22,31 @@ setTimeout(function start() {
     }
     // Do this for every bar (will change to only selected bar)
     $('.bar').each(function(i) {
+        $(this).width(parseFloat($(this).attr('data-percent')) * 10 + 112)
+        if (!$(this).is('#moving-bar')) {
+            $(this).append('<span class="countx"></span>')
+        }
+    });
+    var $moving_time
+    $('#moving-bar').each(function(i) {
         var $bar = $(this);
-        progress(parseFloat($bar.attr('data-percent')), 100, $bar);
+        $moving_time = parseInt($bar.attr('data-percent'))
+        progress(parseInt($bar.attr('data-percent')), 100, $bar);
     });
     $('.count').each(function() {
-        $(this).prop('Counter', /*count from the percent*/ parseFloat($(this).parent('.bar').attr('data-percent'))).animate({
+        $(this).prop('Counter', /*count from the percent*/ parseInt($(this).parent('.bar').attr('data-percent'))).animate({
             Counter: 0 //count down to zero
         }, {
-            duration: 100000,
-            easing: 'swing',
+            duration: $moving_time * 1000,
+            easing: 'linear',
             step: function(now) {
-                $(this).text(Math.ceil(now) + '%');
+                $(this).text(Math.ceil(now));
             }
         });
+
+    });
+    $('.countx').each(function() {
+        $(this).text($(this).parent('.bar').attr('data-percent'));
     });
 
 }, 500)

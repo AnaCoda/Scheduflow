@@ -12,7 +12,7 @@
             $eventname = $_POST['eventname'];
           }
           if(isset($_POST['selectedtopic']) && isset($eventname) && $eventname != null){
-            ?><h1><?php echo $eventname?></h1>
+            ?><h1>Event name<?php echo $eventname?></h1>
             <?php
             $selectedtopic = $_POST['selectedtopic'];
             
@@ -22,9 +22,7 @@
               0
               ");
           }
-          if(isset($_POST['selectedtopic'])){
-            $selectedtopic = $_POST['selectedtopic'];
-          }?>
+          ?>
           <h1>Step One: Name your Task:</h1></div>
           <input type="text" name="eventname">
           <h1>Step Two: Choose a Time:</h1><br>

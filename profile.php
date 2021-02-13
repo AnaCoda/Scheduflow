@@ -12,18 +12,28 @@
     </div>
      <!-- form to add another topic -->
      <?php
-    require "dbconnection.php";
-    $topicquery = $curLink->query("SELECT * FROM `topics`");
-    $topics = $topicquery->fetch_all(MYSQLI_ASSOC);
-
-    if (isset($_POST['topicname']))
+    session_start();
+    // Check that they're logged in, otherwise redirect
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
     {
-        $topicname = $_POST['topicname'];
-        $curLink->query("INSERT INTO topics (topicname) VALUES(
-            '$topicname')") or die(mysqli_error($curLink));
-        header('Refresh: 0');
-    }
+        require "dbconnection.php";
+        $id = $_SESSION['id'];
+        $topicquery = $curLink->query("SELECT * FROM `topics` WHERE user_id='$id'");
+        $topics = $topicquery->fetch_all(MYSQLI_ASSOC);
 
+        if (isset($_POST['topicname']))
+        {
+            $topicname = $_POST['topicname'];
+            $curLink->query("INSERT INTO topics (user_id, topicname) VALUES(
+                '".$_SESSION['id']."',
+                '$topicname')") or die(mysqli_error($curLink));
+            header('Refresh: 0');
+        }
+    }
+    else
+    {
+        header("Location: login.php"); // Redirect to the login page
+    }
     ?>
     <div class="right">
       <div id="topiclist">

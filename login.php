@@ -18,7 +18,7 @@
             $curLink = mysqli_connect("localhost", "root", $dbpass, "scheduflow_db") or die(printf(mysqli_error($curLink))); // Connect to database server(localhost) with username and password.
             $username = $curLink->real_escape_string($_POST['uname']); // Set variable for the username (escape string to prevent injection)
             $password = $curLink->real_escape_string(md5($_POST['pass']));  // Set variable for the password and hash it
-            $search = $curLink->query("SELECT * FROM users WHERE username='".$username."' AND password='".$password."'") or die(mysql_error()); 
+            $search = $curLink->query("SELECT * FROM users WHERE username='".$username."' AND password='".$password."'") or die(mysqli_error($curLink)); 
             $match  = mysqli_num_rows($search); // Query user information so we can put them in session vars
             if($match > 0){
                 $msg = 'Login Complete! Thanks';

@@ -9,7 +9,7 @@
          
         <!-- start php code -->
         <?php
- 
+        $dbpass = file_get_contents('password.txt');
         if(isset($_POST['uname']) && !empty($_POST['uname']) AND isset($_POST['email']) && !empty($_POST['email']))
         {
             // Form Submitted
@@ -36,9 +36,8 @@
                 }
                 else
                 {
-                    $dbpass = file_get_contents('password.txt');
                     // Connect to the SQL database (for the prototype, it's being hosted locally)
-                    $curLink = mysqli_connect("localhost", "root", $dbpass, "scheduflow_db") or die(printf(mysqli_error($curLink))); // Connect to database server(localhost) with username and password.
+                    $curLink = mysqli_connect("localhost", "root", $dpbass, "scheduflow_db") or die(printf(mysqli_error($curLink))); // Connect to database server(localhost) with username and password.
                     
                     // Prevent SQL injection
                     $name = $curLink->real_escape_string($name);
@@ -51,7 +50,7 @@
                         '$name', 
                         '$pass', 
                         '$email')") or die(mysqli_error($curLink));
-                    $search = $curLink->query("SELECT * FROM users WHERE username='".$name."'") or die(mysql_error()); 
+                    $search = $curLink->query("SELECT * FROM users WHERE username='".$name."'") or die(mysqli_error($curLink)); 
                     while($row = mysqli_fetch_assoc($search)) {
                         $id = $row['id'];
                     }

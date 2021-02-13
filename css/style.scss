@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@400;600&display=swap');
+
+$DEEPBLUE: #2c3236;
+$SVGSIZE: 2em;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Khula', sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 3.5em auto;
+}
+
+nav {
+    height: 100%;
+    min-height: 100vh;
+    // padding: 1vh 0;
+    background: $DEEPBLUE;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+        list-style: none;
+
+    }
+}
+
+
+
+.navicons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    li {
+        width: 100%;
+        padding: 1em 0;
+        text-align: center;
+        transition: background 500ms;
+
+        &:hover {
+            background: #1a1a1a;
+        }
+    }
+
+    i {
+        color: white;
+        font-size: $SVGSIZE;
+
+        &.wideboi {
+            transform: scaleX(0.92);
+        }
+    }
+}
+
+.user-icon svg {
+    
+    width: $SVGSIZE;
+    height: $SVGSIZE;
+    border-radius: 50%;
+}

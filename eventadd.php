@@ -7,6 +7,7 @@
         // Check that they're logged in, otherwise redirect
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
         {
+          $id = $_SESSION['id'];
           if(isset($_POST['timeconstraint']) && (isset($_POST['first_submit']))) {
             $timeconstraint = $_POST['timeconstraint'];
           }
@@ -31,7 +32,7 @@
               <input type="text" name="eventname"><br>
               <h1>Choose a Topic</h1>
             <?php
-            $temp = $curLink->query("SELECT * FROM `topics`");
+            $temp = $curLink->query("SELECT * FROM `topics` WHERE user_id='$id'");
             $topics = $temp->fetch_all(MYSQLI_ASSOC);
               foreach ($topics as $t) { ?>
                 <input type="submit" name="selectedtopic" value="<?= $t['topicname']?>">

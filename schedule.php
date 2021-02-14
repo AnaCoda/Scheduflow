@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <title>Your Schedule</title>
   <link href="https://fonts.googleapis.com/css?family=Electrolize&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"> 
   <link rel="stylesheet" href="css/chart.css">
 </head>
 <?php

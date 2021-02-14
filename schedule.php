@@ -61,10 +61,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
        		  	$eventquery = $curLink->query("SELECT 
        		  	(`eventduration`) FROM `events` WHERE user_id='$id' AND eventtopic='".$t['topicname']."'") or die(printf(mysqli_error($curLink)));
        		   	$events = $eventquery->fetch_row();
-        		$durationsum = $events[0];
+            $durationsum = $events[0];
+            if ($durationsum != 0){
         		?>
 			<div class="bar stackeder" data-percent='<?= $durationsum?>'><span class="labelstack"><?= $t['topicname'] ?></span></div>
-			<?php }?>
+			<?php }}?>
       	</div>
 		<!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->
 		<div class="chart-container">

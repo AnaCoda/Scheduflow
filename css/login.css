@@ -37,6 +37,11 @@
   border-color: #036bb1;
 }
 
+.container .form-input:hover {
+  outline: 0;
+  border-color: #036bb1;
+}
+
 .container .submit-button {
   height: 2.4em;
   width: calc(70% + 1em);

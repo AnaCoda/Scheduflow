@@ -1,11 +1,26 @@
 .content {
-  position: relative;
-  top: 30%;
-  left: 10%;
-  width: 30%;
+  margin: auto 15%;
+  width: 35%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 100%;
+      grid-template-columns: auto 100%;
+  -ms-grid-rows: max-content auto  auto;
+      grid-template-rows: -webkit-max-content auto  auto;
+      grid-template-rows: max-content auto  auto;
+  -webkit-column-gap: 10em;
+          column-gap: 10em;
+      grid-template-areas: "svg img" "p img" "a img";
+}
+
+.content > svg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: svg;
+  width: 40em;
 }
 
 .content h1 {
@@ -14,12 +29,25 @@
 }
 
 .content p {
+  margin-top: 0.5em;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: p;
   font-size: 2em;
   line-height: 1.3em;
 }
 
 .content form {
-  display: inline;
+  display: block;
+}
+
+.content .buttons {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: a;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 .content .form-input {
@@ -32,7 +60,8 @@
   vertical-align: middle;
   line-height: 2em;
   padding: 0.3em;
-  margin-bottom: 1em;
+  margin-top: 1em;
+  margin-right: 1em;
   font-size: 1em;
   border-style: solid;
   border-width: 3px;
@@ -51,5 +80,13 @@
 .content .form-input:hover {
   outline: 0;
   border-color: #036bb1;
+}
+
+img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: img;
+  width: 100%;
 }
 /*# sourceMappingURL=index.css.map */

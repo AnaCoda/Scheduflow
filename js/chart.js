@@ -33,7 +33,7 @@ $('.bar').click(function() {
 
             console.log(progressBarWidth);
             console.log($element.attr('class').split(" "));
-            $element.animate({ width: progressBarWidth }, 2000);
+            $element.animate({ width: progressBarWidth }, 1000);
             $element.append('<span class="count"></span>')
             if (timeleft > 0) {
                 setTimeout(function() {

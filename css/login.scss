@@ -1,0 +1,46 @@
+.container {
+    position: relative;
+    width: 50%;
+    top: 30%;
+    left: 10%;
+
+    h3 {
+        font-size: 4em;
+        text-transform: capitalize;
+
+    }
+
+    p {
+        font-size: 1.5em;
+        line-height: 1.2em;
+        margin-bottom: 1em;
+    }
+
+    .form-input {
+        width: 70%;
+        height: 10%;
+        padding: 0.3em;
+        margin-bottom: 1em;
+        font-size: 1em;
+        line-height: 0;
+        border-width: 3px;
+        background: white;
+        border-style: solid;
+        border-color: #333;
+        border-radius: 10px;
+        transition: border-color 500ms;
+
+        &:focus {
+            outline: 0;
+            border-color: rgb(3, 107, 177);
+        }
+
+    }
+
+    .submit-button {
+        height: 2.4em;
+        width: calc(70% + 1em);
+    }
+
+
+}

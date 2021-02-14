@@ -13,8 +13,8 @@
           }
           ?><h1>Event name <?php echo $eventname?></h1>
             <?php
-          if(isset($_POST['selectedtopic'])/* && isset($eventname) && $eventname != ''*/){
-            ?><h1>Event name<?php echo $eventname?></h1>
+          if(isset($_POST['selectedtopic']) && isset($eventname) && $eventname != ''){
+            ?><h1>Event name <?php echo $eventname?></h1>
             <?php
             $eventname = $_POST['eventname'];
             $selectedtopic = $_POST['selectedtopic'];
@@ -26,7 +26,7 @@
               ");
           }
           ?>
-          <form action="eventadd.php" method="post" autocomplete="false">
+          <form action="eventadd.php" method="post" autocomplete="off">
             <h1>Step One: Name your Task:</h1></div>
             <input type="text" name="eventname">
             <h1>Step Two: Choose a Time:</h1><br>
@@ -35,7 +35,6 @@
             <input type="button" name="until" value="Everyday Until">
             </div><br>
             <h1>Step Three: Choose a Topic</h1>
-          
           <?php 
           $temp = $curLink->query("SELECT * FROM `topics`");
           $topics = $temp->fetch_all(MYSQLI_ASSOC);
@@ -44,9 +43,10 @@
           <!--Jim-senpai pls add css and classes thx-->
             
               <input type="submit" name="selectedtopic" value="<?= $t['topicname']?>">
-            </form>
+            
           </div>
         <?php }
+        ?></form><?php
         }
         else
         {

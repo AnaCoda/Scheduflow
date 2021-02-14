@@ -24,6 +24,23 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 ?>
 
 <body>
+  <nav class="navbar">
+		<ul class="navicons topicons">
+			<a href="/index.php"><li><i class="fas fa-home wideboi"></i></li></a>
+			<a href=""><li><i class="fas fa-chart-bar wideboi"></i></li></a>
+			<a href="/eventadd.php"><li><i class="fas fa-sticky-note"></i></li></a>
+		</ul>
+		<ul class="navicons boticons">
+			<!-- <li><i class="fas fa-cog settings-icon"></i></li> -->
+			<li>
+				<a href="/profile.php">
+					<div class="user-icon">
+						<?php echo file_get_contents("img/profile-pic.svg");?>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</nav>
   <h1>Your Schedule</h1>
   <div class="wrap">
     <!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->

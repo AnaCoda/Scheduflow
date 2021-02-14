@@ -28,19 +28,22 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
   <div class="wrap">
     <!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->
     <?php
-    foreach ($topics as $t) { ?>
+    foreach ($topics as $t) {
+      $eventquery = $curLink->query("SELECT * FROM `events` WHERE user_id='$id' AND eventtopic='".$t['topicname']."'") or die(printf(mysqli_error($curLink)));
+      $events = $eventquery->fetch_all(MYSQLI_ASSOC);
+      ?>
       
       <div class="chart">
         <span class="label"><?= $t['topicname'] ?></span>
-        <div class="bar" data-percent="40"></div>
-        <div class="bar" data-percent="10"><span class="labelstack"></span></div>
-      </div>
-    <?php } ?>
-    <div class="chart">
-      <span class="label">jQuery</span>
-      <div class="bar" data-percent="40"></div>
-      <div class="bar" id='moving-bar' data-percent="10"><span class="labelstack"></span></div>
-    </div>
+        <div class="bar stackeder" data-percent="0"></div>
+        <?php
+        
+        foreach ($events as $e) {?>
+        
+        <div class="bar stackeder" data-percent="<?= $e['eventduration'] ?>"><span class="labelstack"><?= $e['eventname'] ?></span></div>
+      
+        <?php }?></div><?php } ?>
+      
     </div>
 </div>
 

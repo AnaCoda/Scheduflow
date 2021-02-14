@@ -74,7 +74,20 @@
 				</form>
 			</div>
 		</div>
-	<div class="other-stuff"></div>
+	<div class="other-settings">
+    <h2>Priority</h2> <!--dummy buttons since we dummy thicc-->
+      <input type="radio" name="prio" value="oneday">
+      Longest first<br>
+      <input type="radio" name="prio" value="indefinite">
+      Shortest first<br>
+      <input type="radio" name="prio" value="until">
+      By Topic List<br>
+    <h2>Theme</h2>
+      <input type="button" value="dark">
+      <input type="button" value="light">
+      <input type="button" value="forest">
+      <input type="button" value="ocean">
+  </div>
 	</main>
 </body>
 </html>

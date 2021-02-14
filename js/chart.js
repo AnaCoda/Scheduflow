@@ -2,9 +2,9 @@
 // Do this for every bar (will change to only selected bar)
 $('.bar').each(function(i) {
     if (!$(this).hasClass('stackeder')) {
-        $(this).width(parseFloat($(this).attr('data-percent')) * 7 + 112)
+        $(this).width(parseFloat($(this).attr('data-percent')) * 5 + 112)
     } else {
-        $(this).width(parseFloat($(this).attr('data-percent')) * 7)
+        $(this).width(parseFloat($(this).attr('data-percent')) * 5)
     }
     if (!$(this).hasClass('.moving-bar')) {
         $(this).append('<span class="countx"></span>')
@@ -25,9 +25,9 @@ $('.bar').click(function() {
         function progress(timeleft, timetotal, $element) {
 
             if (!$element.hasClass('stackeder')) {
-                var progressBarWidth = timeleft * 7 + 112;
+                var progressBarWidth = timeleft * 5 + 112;
             } else {
-                var progressBarWidth = timeleft * 7;
+                var progressBarWidth = timeleft * 5;
             }
 
 

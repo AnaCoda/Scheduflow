@@ -25,6 +25,19 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 <body>
   <h1>Your Schedule</h1>
+  <div class="chart">
+        <span class="label"><?= 'Timeline' ?></span>
+        <div class="bar stackeder" data-percent="0"></div>
+        <?php
+        foreach ($topics as $t) {
+          #echo $t['topicname'];
+          $eventquery = $curLink->query("SELECT SUM(`eventduration`) FROM `events` WHERE user_id='$id' AND eventtopic='".$t['topicname']."'") or die(printf(mysqli_error($curLink)));
+          $events = $eventquery->fetch_row();
+          $durationsum = $events[0];
+          ?>
+        <div class="bar stackeder" data-percent='<?= $durationsum?>'><span class="labelstack"><?= $t['topicname'] ?></span></div>
+        <?php }?>
+      </div>
   <div class="wrap">
     <!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->
     <?php

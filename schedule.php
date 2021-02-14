@@ -59,7 +59,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         	foreach ($topics as $t) {
          	 	#echo $t['topicname'];
        		  	$eventquery = $curLink->query("SELECT 
-       		  	(`eventduration`) FROM `events` WHERE user_id='$id' AND eventtopic='".$t['topicname']."'") or die(printf(mysqli_error($curLink)));
+       		  	SUM(`eventduration`) FROM `events` WHERE user_id='$id' AND eventtopic='".$t['topicname']."'") or die(printf(mysqli_error($curLink)));
        		   	$events = $eventquery->fetch_row();
             $durationsum = $events[0];
             if ($durationsum != 0){

@@ -3,11 +3,13 @@
 <html lang="en">
 
 <head>
+
 	<meta charset="UTF-8">
 	<title>Your Schedule</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/chart.css">
 	<script src="https://kit.fontawesome.com/38b15697bc.js" crossorigin="anonymous"></script>
+
 </head>
 <?php
 session_start();
@@ -25,7 +27,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 ?>
 
 <body>
-	<nav class="navbar">
+  <nav class="navbar">
 		<ul class="navicons topicons">
 			<a href="/index.php">
 				<li><i class="fas fa-home wideboi"></i></li>
@@ -50,6 +52,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	</nav>
 	<main class="wrap">
 		<h1>Your Schedule</h1>
+		<div class="chart">
+        	<span class="label"><?= 'Timeline' ?></span>
+        	<div class="bar stackeder" data-percent="0"></div>
+        	<?php
+        	foreach ($topics as $t) {
+         	 	#echo $t['topicname'];
+       		  	$eventquery = $curLink->query("SELECT 
+       		  	(`eventduration`) FROM `events` WHERE user_id='$id' AND eventtopic='".$t['topicname']."'") or die(printf(mysqli_error($curLink)));
+       		   	$events = $eventquery->fetch_row();
+        		$durationsum = $events[0];
+        		?>
+			<div class="bar stackeder" data-percent='<?= $durationsum?>'><span class="labelstack"><?= $t['topicname'] ?></span></div>
+			<?php }?>
+      	</div>
 		<!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->
 		<div class="chart-container">
 		<?php

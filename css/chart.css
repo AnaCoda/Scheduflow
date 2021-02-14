@@ -68,6 +68,20 @@ body {
   background-color: #ffb90a;
 }
 
+
+.labelstack {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    display: table-cell;
+    vertical-align: middle;
+    display: table;
+    margin: 0 auto;
+    top: 1em;
+    padding: .15em;
+    position: absolute;
+    margin-left: 35%;
+}
 .chart:nth-of-type(3n + 3) .bar {
   background-color: #71ce67;
 }

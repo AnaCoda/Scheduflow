@@ -1,0 +1,93 @@
+$BORDERCOLORS: #2b87ff, #ffb90a, #71ce67;
+
+.chart {
+    /* overflow: hidden !important; */
+    /* width: 0% !important; */
+    display: flex;
+}
+
+.wrap {
+    width: min-content;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.wrap h1 {
+    width: max-content;
+}
+
+body {
+    color: #212121;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bar {
+    /*width: 0px;*/
+    /*margin: .25em 0;*/
+    color: #fff;
+    height: 60px;
+    position: relative;
+    vertical-align: middle;
+}
+
+@for $i from 1 through length($BORDERCOLORS) {
+    .chart:nth-of-type(#{length($BORDERCOLORS)}n + #{$i}) .bar {
+        background-color: nth($BORDERCOLORS, $i);
+    }
+}
+
+.bar:nth-of-type(even) {
+    background: #ff6461;
+}
+
+// .labelstack {
+//     text-align: center;
+//     display: inline-flex;
+//     align-items: center;
+//     display: table-cell;
+//     vertical-align: middle;
+//     display: table;
+//     margin: 0 auto;
+//     top: 1em;
+//     padding: .15em;
+//     position: absolute;
+//     margin-left: 40%;
+//     font-weight: 600;
+//     font-size: 16px;
+// }
+
+.label {
+    height: 60px;
+    width: 7em;
+    /* display: inline-block; */
+    position: static;
+    z-index: 2;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@for $i from 1 through length($BORDERCOLORS) {
+    .chart:nth-of-type(#{length($BORDERCOLORS)}n + #{$i})>.label {
+        background-color: scale-color(nth($BORDERCOLORS, $i), $lightness: -15%);
+    }
+}
+
+.labelstack, .count, .countx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 60px;
+    right: .5em;
+    // top: 1.5em;
+    // padding: .15em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.labelstack {
+    right: 2em;
+}

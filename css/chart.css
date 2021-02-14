@@ -1,15 +1,13 @@
 .chart {
-    overflow: hidden !important;
-    width: 0% !important;
+    /* overflow: hidden !important; */
+    /* width: 0% !important; */
+    display: flex;
 }
 
-.stacked {
-    display: flex !important;
-    height: 60px !important;
-    color: #fff !important;
-    float: left !important;
-    position: relative !important;
-    overflow: hidden !important;
+.wrap {
+    width: min-content;
+    margin-left: 10%;
+    margin-top: 5%;
 }
 
 * {
@@ -18,7 +16,7 @@
     border: 0;
     font: inherit;
     font-size: 100%;
-    vertical-align: baseline;
+    /* vertical-align: baseline; */
     font-family: 'Electrolize', sans-serif;
 }
 
@@ -45,47 +43,30 @@ h1 {
     /*width: 0px;*/
     /*margin: .25em 0;*/
     color: #fff;
-    /*position: relative;
-    clear: both;*/
+    height: 60px;
+    position: relative;
 }
 
-.bar:nth-of-type(odd) {
+.bar:nth-of-type(even) {
     background: #ff6461;
 }
 
-.row {
-    margin-bottom: 1.5em !important;
-    display: block !important;
-}
-
-.bar .label {
+.label {
     font-size: .75em;
-    padding: 1em;
+    padding: 1.5em;
     background: #212121;
     width: 7em;
-    display: inline-block;
-    position: relative;
+    /* display: inline-block; */
+    position: static;
     z-index: 2;
     font-weight: bold;
+    color: #fff;
 }
 
-.bar .label.second {
-    background: #333;
-}
-
-.count {
+.count, .countx {
     position: absolute;
-    right: .25em;
-    top: .75em;
-    padding: .15em;
-    font-size: .75em;
-    font-weight: bold;
-}
-
-.countx {
-    position: absolute;
-    right: .25em;
-    top: .75em;
+    right: .5em;
+    top: 1.5em;
     padding: .15em;
     font-size: .75em;
     font-weight: bold;

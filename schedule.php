@@ -35,20 +35,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
       
       <div class="chart">
         <span class="label"><?= $t['topicname'] ?></span>
-        <div class="bar" data-percent="40"></div>
+        <div class="bar stackeder" data-percent="0"></div>
         <?php
         
         foreach ($events as $e) {?>
         
-        <div class="bar" data-percent="10"><span class="labelstack"></span></div>
+        <div class="bar stackeder" data-percent="<?= $e['eventduration'] ?>"><span class="labelstack"><?= $e['eventname'] ?></span></div>
       
         <?php }?></div><?php } ?>
       
-    <div class="chart">
-      <span class="label">jQuery</span>
-      <div class="bar" data-percent="40"></div>
-      <div class="bar stackeder" id='moving-bar' data-percent="10"><span class="labelstack"></span></div>
-    </div>
     </div>
 </div>
 

@@ -10,16 +10,18 @@
 <body>
     <nav class="navbar">
 		<ul class="navicons topicons">
-			<li><a href=""><i class="fas fa-home wideboi"></i></a></li>
-			<li><a href=""><i class="fas fa-chart-bar wideboi"></i></a></li>
-			<li><a href=""><i class="fas fa-sticky-note"></i></a></li>
+			<a href="/index.php"><li><i class="fas fa-home wideboi"></i></li></a>
+			<a href=""><li><i class="fas fa-chart-bar wideboi"></i></li></a>
+			<a href=""><li><i class="fas fa-sticky-note"></i></li></a>
 		</ul>
 		<ul class="navicons boticons">
-			<li><i class="fas fa-cog settings-icon"></i></li>
+			<!-- <li><i class="fas fa-cog settings-icon"></i></li> -->
 			<li>
-				<div class="user-icon">
-					<?php echo file_get_contents("img/profile-pic.svg");?>
-				</div>
+				<a href="/profile.php">
+					<div class="user-icon">
+						<?php echo file_get_contents("img/profile-pic.svg");?>
+					</div>
+				</a>
 			</li>
 		</ul>
 	</nav>

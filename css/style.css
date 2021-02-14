@@ -71,8 +71,7 @@ nav li {
 }
 
 .navicons i {
-  color: white;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .navicons i.wideboi {
@@ -81,8 +80,20 @@ nav li {
 }
 
 .user-icon svg {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
+}
+
+.fa-home {
+  color: #2b87ff;
+}
+
+.fa-chart-bar {
+  color: #ffb90a;
+}
+
+.fa-sticky-note {
+  color: #71ce67;
 }
 /*# sourceMappingURL=style.css.map */

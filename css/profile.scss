@@ -1,3 +1,5 @@
+$BORDERCOLORS: #2b87ff, #ffb90a, #71ce67;
+
 .container {
     margin: 5% 15%;
     display: grid;
@@ -8,7 +10,9 @@
         "subject other"
         "add-subject other";
     & > * {
-        border: 5px solid #ddd;
+        // border: 5px solid #ddd;
+        border-width: 5px;
+        border-style: solid;
         border-radius: 10px;
         padding: 1rem;
         margin: 1rem 0;
@@ -35,7 +39,7 @@
     // box-shadow: 3px 5px 16px 2px rgba(0,0,0,0.2);
 
     hr {
-        border: 2px solid #ddd;
+        border: 2px solid #ffb90a;
         border-radius: 2px;
         margin-bottom: 1em;
         // border: none;
@@ -82,3 +86,9 @@ h2 {
         border-color: rgb(3, 107, 177);
     }
 }
+
+@for $i from 1 through length($BORDERCOLORS) {
+    .container>*:nth-child(#{length($BORDERCOLORS)}n + #{$i}) {
+      border-color: nth($BORDERCOLORS, $i);
+    }
+  }

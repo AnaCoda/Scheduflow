@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Khula:wght@400;600;700&display=swap');
 
 $DEEPBLUE: #2c3236;
-$SVGSIZE: 2.5em;
+$SVGSIZE: 2em;
 
 * {
     margin: 0;
@@ -58,7 +58,7 @@ nav {
     }
 
     i {
-        color: white;
+        // color: white;
         font-size: $SVGSIZE;
 
         &.wideboi {
@@ -72,4 +72,16 @@ nav {
     width: $SVGSIZE;
     height: $SVGSIZE;
     border-radius: 50%;
+}
+
+.fa-home {
+    color: #2b87ff
+}
+
+.fa-chart-bar {
+    color: #ffb90a
+}
+
+.fa-sticky-note {
+    color: #71ce67
 }

@@ -11,7 +11,8 @@
 }
 
 .container > * {
-  border: 5px solid #ddd;
+  border-width: 5px;
+  border-style: solid;
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem 0;
@@ -41,7 +42,7 @@
 }
 
 .subjects hr {
-  border: 2px solid #ddd;
+  border: 2px solid #ffb90a;
   border-radius: 2px;
   margin-bottom: 1em;
 }
@@ -90,5 +91,17 @@ h2 {
 .form-submit:hover {
   outline: 0;
   border-color: #036bb1;
+}
+
+.container > *:nth-child(3n + 1) {
+  border-color: #2b87ff;
+}
+
+.container > *:nth-child(3n + 2) {
+  border-color: #ffb90a;
+}
+
+.container > *:nth-child(3n + 3) {
+  border-color: #71ce67;
 }
 /*# sourceMappingURL=profile.css.map */

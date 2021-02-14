@@ -16,7 +16,7 @@
 			<a href=""><li><i class="fas fa-sticky-note"></i></li></a>
 		</ul>
 		<ul class="navicons boticons">
-			<li><i class="fas fa-cog settings-icon"></i></li>
+			<!-- <li><i class="fas fa-cog settings-icon"></i></li> -->
 			<li>
 				<a href="/profile.php">
 					<div class="user-icon">
@@ -65,7 +65,7 @@
 		</div>
 		<div class="add-subject">
 
-			<h2>Add a Topic</h2>
+			<h2>Add a Subject</h2>
 			<div id="topics">
 				<form action="" method="post" class="form-horizontal" autocomplete="off">
 				<p>Topic Name:</p>

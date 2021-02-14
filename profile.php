@@ -60,7 +60,7 @@
 			<hr>
 			<?php
 				foreach ($topics as $t) { ?>
-				<div class="topic-name"><?= $t['topicname'] ?></div>
+				<h3 class="topic-name"><?= $t['topicname'] ?></h3>
 			<?php } ?>
 		</div>
 		<div class="add-subject">
@@ -74,20 +74,17 @@
 				</form>
 			</div>
 		</div>
-	<div class="other-settings">
-    <h2>Priority</h2> <!--dummy buttons since we dummy thicc-->
-      <input type="radio" name="prio" value="oneday">
-      Longest first<br>
-      <input type="radio" name="prio" value="indefinite">
-      Shortest first<br>
-      <input type="radio" name="prio" value="until">
-      By Topic List<br>
-    <h2>Theme</h2>
-      <input type="button" value="dark">
-      <input type="button" value="light">
-      <input type="button" value="forest">
-      <input type="button" value="ocean">
-  </div>
+		<div class="other-settings">
+			<h2>Priority</h2> <!--dummy buttons since we dummy thicc-->
+			<h3 class="topic-name"><input class="radio-button" type="radio" name="prio" value="oneday">Longest first</h3>
+			<h3 class="topic-name"><input class="radio-button" type="radio" name="prio" value="indefinite">Shortest first</h3>
+			<h3 class="topic-name"><input class="radio-button" type="radio" name="prio" value="until">By Topic List</h3>
+			<h2>Theme</h2>
+			<input class="submit-button form-submit" type="button" value="dark">
+			<input class="submit-button form-submit" type="button" value="light">
+			<input class="submit-button form-submit" type="button" value="forest">
+			<input class="submit-button form-submit" type="button" value="ocean">
+		</div>
 	</main>
 </body>
 </html>

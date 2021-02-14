@@ -7,6 +7,9 @@
   -ms-grid-rows: min-content auto min-content;
       grid-template-rows: -webkit-min-content auto -webkit-min-content;
       grid-template-rows: min-content auto min-content;
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  row-gap: 1em;
       grid-template-areas: "h1 h1" "subject other" "add-subject other";
 }
 
@@ -15,7 +18,6 @@
   border-style: solid;
   border-radius: 10px;
   padding: 1rem;
-  margin: 1rem 0;
 }
 
 .container h1 {
@@ -29,16 +31,24 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: h1;
-  margin: 0em 0em 0.2em;
   font-size: 4em;
   padding-top: 0.5em;
   line-height: 0.7em;
+  border-color: #2b87ff;
+}
+
+.topic-name {
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  font-weight: normal;
+  margin: 0.2rem 0;
 }
 
 .subjects {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: subject;
+  border-color: #ffb90a;
 }
 
 .subjects hr {
@@ -47,23 +57,23 @@
   margin-bottom: 1em;
 }
 
-.subjects .topic-name {
-  font-size: 1.2em;
-  line-height: 1.2em;
-}
-
 .add-subject {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: add-subject;
+  border-color: #71ce67;
 }
 
-.other-stuff {
+.add-subject .submit-button {
+  margin-top: 0.4em;
+}
+
+.other-settings {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
   grid-area: other;
-  border: none;
+  border-color: #ffb90a;
 }
 
 h2 {
@@ -93,15 +103,7 @@ h2 {
   border-color: #036bb1;
 }
 
-.container > *:nth-child(3n + 1) {
-  border-color: #2b87ff;
-}
-
-.container > *:nth-child(3n + 2) {
-  border-color: #ffb90a;
-}
-
-.container > *:nth-child(3n + 3) {
-  border-color: #71ce67;
+.radio-button {
+  margin: 0 1em;
 }
 /*# sourceMappingURL=profile.css.map */

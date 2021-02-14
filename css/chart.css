@@ -1,23 +1,41 @@
+.wrap {
+  width: 70%;
+  margin: 5% 15%;
+}
+
+.wrap > * {
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.wrap h1 {
+  width: auto;
+  font-size: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0.5em;
+  line-height: 0.7em;
+  margin-bottom: 1rem;
+  border-color: #2b87ff;
+}
+
+.chart-container {
+  border-color: #ddd;
+}
+
 .chart {
   /* overflow: hidden !important; */
   /* width: 0% !important; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.wrap {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  margin-left: 10%;
-  margin-top: 5%;
-}
-
-.wrap h1 {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  margin-bottom: 1em;
 }
 
 body {
@@ -32,6 +50,14 @@ body {
   height: 60px;
   position: relative;
   vertical-align: middle;
+  border-radius: 30px;
+  -webkit-box-shadow: 8px 4px 22px -6px rgba(0, 0, 0, 0.35);
+          box-shadow: 8px 4px 22px -6px rgba(0, 0, 0, 0.35);
+}
+
+.finished {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .chart:nth-of-type(3n + 1) .bar {
@@ -57,7 +83,6 @@ body {
   position: static;
   z-index: 2;
   font-weight: bold;
-  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,18 +92,27 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 1em;
+  border-radius: 30px;
+  border-width: 5px;
+  border-style: solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .chart:nth-of-type(3n + 1) > .label {
-  background-color: #006efd;
+  color: #2b87ff;
+  border-color: #2b87ff;
 }
 
 .chart:nth-of-type(3n + 2) > .label {
-  background-color: #e1a100;
+  color: #ffb90a;
+  border-color: #ffb90a;
 }
 
 .chart:nth-of-type(3n + 3) > .label {
-  background-color: #50c344;
+  color: #71ce67;
+  border-color: #71ce67;
 }
 
 .labelstack, .count, .countx {

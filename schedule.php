@@ -51,6 +51,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	<main class="wrap">
 		<h1>Your Schedule</h1>
 		<!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->
+		<div class="chart-container">
 		<?php
 		foreach ($topics as $t)
 		{
@@ -76,6 +77,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			<?php 
 		}
 		?>
+		</div>
 	</main>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src="js/chart.js"></script>

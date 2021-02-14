@@ -1,9 +1,21 @@
 .content {
-    position: relative;
-    top: 30%;
-    left: 10%;
-    width: 30%;
+    margin: auto 15%;
+    width: 35%;
     height: fit-content;
+    display: grid;
+    grid-template-columns: auto 100%;
+    grid-template-rows: max-content auto  auto;
+    column-gap: 10em;
+    // align-items: space-between;
+    grid-template-areas:
+        "svg img"
+        "p img"
+        "a img";
+
+    > svg {
+        grid-area: svg;
+        width: 40em;
+    }
 
     h1 {
         font-weight: 700;
@@ -11,12 +23,20 @@
     }
 
     p {
+        margin-top: 0.5em;
+        grid-area: p;
         font-size: 2em;
         line-height: 1.3em;
     }
 
     form {
-        display: inline;
+        display: block;
+    }
+
+    .buttons {
+        grid-area: a;
+        align-self: end;
+        // display: ;
     }
 
     .form-input {
@@ -29,7 +49,8 @@
         vertical-align: middle;
         line-height: 2em;
         padding: 0.3em;
-        margin-bottom: 1em;
+        margin-top: 1em;
+        margin-right: 1em;
         font-size: 1em;
         border-style: solid;
         border-width: 3px;
@@ -48,4 +69,10 @@
             border-color: rgb(3, 107, 177);
         }
     }
+}
+
+img {
+    grid-area: img;
+    width: 100%;
+    // margin-left: 10em;
 }

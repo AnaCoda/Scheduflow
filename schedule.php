@@ -3,24 +3,35 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>JavaScript Animated Bar Graphs | Webdevtrick.com</title>
+  <title>Your Schedule</title>
   <link href="https://fonts.googleapis.com/css?family=Electrolize&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/chart.css">
 </head>
-
+<?php
+  session_start();
+  // Check that they're logged in, otherwise redirect
+  if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+  {
+    require "dbconnection.php";
+    $id = $_SESSION['id'];
+    $eventquery = $curLink->query("SELECT * FROM `events` WHERE user_id='$id'") or die(printf(mysqli_error($curLink)));
+    $events = $eventquery->fetch_all(MYSQLI_ASSOC);
+    $topicquery = $curLink->query("SELECT * FROM `topics` WHERE user_id='$id'") or die(printf(mysqli_error($curLink)));
+    $topics = $topicquery->fetch_all(MYSQLI_ASSOC);
+  }
+  else
+    {
+        header("Location: login.php"); // Redirect to the login page
+    }
+?>
 <body>
    <div class="wrap">
-<h1>JavaScript Animated Bar Graphs</h1>
-<div class="holder"><div class="bar " data-percent="95"><span class="label">HTML</span></div>
-<div class="bar" data-percent="80"><span class="label second">CSS</span></div>
-<div class="bar" data-percent="65"><span class="label">JavaScript</span></div>
+<h1>Your Schedule</h1>
+<?php 
+          foreach ($topics as $t) { ?>
+          <div class="bar" data-percent="20"> <span class="label"><?= $t['topicname'] ?></span></div>
+<?php } ?>
 <div class="bar" id='moving-bar' data-percent="10"><span class="label second">jQuery</span></div>
-<div class="bar" data-percent="90"><span class="label">Bootstrap</span></div>
-<div class="bar" data-percent="40"><span class="label second">React</span></div>
-<div class="bar" data-percent="45"><span class="label ">Vue</span></div>
-<div class="bar" data-percent="50"><span class="label second">Angular</span></div>
-<div class="bar" data-percent="95"><span class="label">CMS</span></div>
-<div class="bar" data-percent="70"><span class="label second">Node JS</span></div>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

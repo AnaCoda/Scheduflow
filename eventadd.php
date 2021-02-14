@@ -63,8 +63,9 @@
 				<h1>Name your Task:</h1>
 				<input class="form-input" type="text" name="eventname"><br>
 				<h1>Choose a Topic</h1>
-				<?php
-				$temp = $curLink->query("SELECT * FROM `topics`");
+        <?php
+        $id = $_SESSION['id'];
+				$temp = $curLink->query("SELECT * FROM `topics` WHERE user_id='$id'");
 				$topics = $temp->fetch_all(MYSQLI_ASSOC);
 				foreach ($topics as $t) 
 				{

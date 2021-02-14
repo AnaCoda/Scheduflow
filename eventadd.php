@@ -27,16 +27,40 @@
             if(isset($_POST['selecteddate'])){
               $selecteddate = $_POST['selecteddate'];
             }?>
-            <h1>Name your Task:</h1>
-                <input type="text" name="eventname"><br>
-                <h1>Choose a Topic</h1>
+              <h1>Name your Task:</h1>
+              <input type="text" name="eventname"><br>
+              <h1>Choose a Topic</h1>
             <?php
             $temp = $curLink->query("SELECT * FROM `topics`");
             $topics = $temp->fetch_all(MYSQLI_ASSOC);
               foreach ($topics as $t) { ?>
                 <input type="submit" name="selectedtopic" value="<?= $t['topicname']?>">
               <?php }
-          ?><?php
+          ?> <h1>Completion Time:</h1>
+              <label for="minutes">Minutes</label>
+              <select name="minutes" id="timeminutes">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+              </select>
+              <label for="hours">Hours</label>
+              <select name="hours" id="timehours">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+    <?php
           }
           else{
             ?><h1>Choose a Time:</h1><br>
@@ -50,23 +74,20 @@
               <input type="submit" name="first_submit" value="Submit">
             </form>
           <?php }
-            if(isset($_POST['selectedtopic']) /*&& isset($eventname) && $eventname != '' && isset($selecteddate) && $selecteddate != ''*/){
-              
+            if(isset($_POST['selectedtopic']) /*this breaks the code dont know why :( && isset($eventname) && $eventname != ''*/){
+              $totaltimeminutes = intval($_POST['minutes']) + 60*intval($_POST['hours']) or die(mysqli_error($curLink));
               $eventname = $curLink->real_escape_string($_POST['eventname']);
               $selectedtopic = $curLink->real_escape_string($_POST['selectedtopic']);
-              ?>
-              <?php
-              $curLink->query("INSERT INTO events (user_id, eventtopic, eventname, eventtime, eventtype) VALUES(
+              $curLink->query("INSERT INTO events (user_id, eventtopic, eventname, eventtime, eventduration, eventtype) VALUES(
                   '".$_SESSION['id']."',
                   '$selectedtopic',
                   '$eventname',
                   null,
+                  '$totaltimeminutes',
                   0)") or die(mysqli_error($curLink));
               header('Refresh: 0');
             }
-              ?>
-                
-                </form><?php
+              ?></form><?php
             
           }
         else

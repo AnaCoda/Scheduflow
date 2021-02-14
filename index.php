@@ -12,24 +12,29 @@
 <body>
 	<nav class="navbar">
 		<ul class="navicons topicons">
-			<li><i class="fas fa-home wideboi"></i></li>
-			<li><i class="fas fa-chart-bar wideboi"></i></li>
-			<li><i class="fas fa-sticky-note"></i></li>
+			<a href="/index.php"><li><i class="fas fa-home wideboi"></i></li></a>
+			<a href=""><li><i class="fas fa-chart-bar wideboi"></i></li></a>
+			<a href=""><li><i class="fas fa-sticky-note"></i></li></a>
 		</ul>
 		<ul class="navicons boticons">
-			<li><i class="fas fa-cog settings-icon"></i></li>
+			<!-- <li><i class="fas fa-cog settings-icon"></i></li> -->
 			<li>
-				<div class="user-icon">
-					<?php echo file_get_contents("img/profile-pic.svg");?>
-				</div>
+				<a href="/profile.php">
+					<div class="user-icon">
+						<?php echo file_get_contents("img/profile-pic.svg");?>
+					</div>
+				</a>
 			</li>
 		</ul>
 	</nav>
 	<main class="content">
-		<h1>Scheduflow</h1>
-		<p>Helping students (and teachers) keep track of their lives</p>
-		<a href="/login.php" class="form-input submit-button">Login</a>
-		<a href="/signup.php" class="form-input submit-button">Signup</a>
+		<?php echo file_get_contents("img/Logo.svg");?>
+		<p>Helping students (and teachers) keep track of their lives.</p>
+		<div class="buttons">
+			<a href="/login.php" class="form-input submit-button">Login</a>
+			<a href="/signup.php" class="form-input submit-button">Signup</a>
+		</div>
+		<img src="img/pexels-photo-4050315.jpg" alt="Student Studying Picture">
 	</main>
 </body>
 </html>

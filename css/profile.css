@@ -1,0 +1,107 @@
+.container {
+  margin: 5% 15%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% auto;
+      grid-template-columns: 30% auto;
+  -ms-grid-rows: min-content auto min-content;
+      grid-template-rows: -webkit-min-content auto -webkit-min-content;
+      grid-template-rows: min-content auto min-content;
+      grid-template-areas: "h1 h1" "subject other" "add-subject other";
+}
+
+.container > * {
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.container h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: h1;
+  margin: 0em 0em 0.2em;
+  font-size: 4em;
+  padding-top: 0.5em;
+  line-height: 0.7em;
+}
+
+.subjects {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: subject;
+}
+
+.subjects hr {
+  border: 2px solid #ffb90a;
+  border-radius: 2px;
+  margin-bottom: 1em;
+}
+
+.subjects .topic-name {
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+.add-subject {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: add-subject;
+}
+
+.other-stuff {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: other;
+  border: none;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.25em;
+}
+
+.form-submit {
+  padding: 0.3em;
+  font-size: 1em;
+  border-width: 3px;
+  background: white;
+  border-style: solid;
+  border-color: #333;
+  border-radius: 10px;
+  -webkit-transition: border-color 500ms;
+  transition: border-color 500ms;
+}
+
+.form-submit:focus {
+  outline: 0;
+  border-color: #036bb1;
+}
+
+.form-submit:hover {
+  outline: 0;
+  border-color: #036bb1;
+}
+
+.container > *:nth-child(3n + 1) {
+  border-color: #2b87ff;
+}
+
+.container > *:nth-child(3n + 2) {
+  border-color: #ffb90a;
+}
+
+.container > *:nth-child(3n + 3) {
+  border-color: #71ce67;
+}
+/*# sourceMappingURL=profile.css.map */

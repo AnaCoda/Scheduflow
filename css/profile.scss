@@ -1,0 +1,94 @@
+$BORDERCOLORS: #2b87ff, #ffb90a, #71ce67;
+
+.container {
+    margin: 5% 15%;
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas: 
+        "h1 h1"
+        "subject other"
+        "add-subject other";
+    & > * {
+        // border: 5px solid #ddd;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        grid-area: h1;
+        margin: 0em 0em 0.2em;
+        font-size: 4em;
+        padding-top: 0.5em;
+        line-height: 0.7em;
+
+        // text-align: center;
+    }
+}
+
+
+
+.subjects {
+    grid-area: subject;
+    // background: #ddd;
+    // box-shadow: 3px 5px 16px 2px rgba(0,0,0,0.2);
+
+    hr {
+        border: 2px solid #ffb90a;
+        border-radius: 2px;
+        margin-bottom: 1em;
+        // border: none;
+        // background: #aaa;
+    }
+
+    .topic-name {
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+}
+
+.add-subject {
+    grid-area: add-subject;
+}
+
+.other-stuff {
+    grid-area: other;
+    border: none; //TEMPORARY
+}
+
+h2 {
+    font-size: 2em;
+    line-height: 1.25em;
+}
+
+.form-submit {
+    padding: 0.3em;
+    font-size: 1em;
+    border-width: 3px;
+    background: white;
+    border-style: solid;
+    border-color: #333;
+    border-radius: 10px;
+    transition: border-color 500ms;
+
+    &:focus {
+        outline: 0;
+        border-color: rgb(3, 107, 177);
+    }
+
+    &:hover {
+        outline: 0;
+        border-color: rgb(3, 107, 177);
+    }
+}
+
+@for $i from 1 through length($BORDERCOLORS) {
+    .container>*:nth-child(#{length($BORDERCOLORS)}n + #{$i}) {
+      border-color: nth($BORDERCOLORS, $i);
+    }
+  }

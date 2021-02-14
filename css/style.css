@@ -30,6 +30,8 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.2);
 }
 
 nav li {
@@ -50,6 +52,11 @@ nav li {
   width: 100%;
 }
 
+.navicons a {
+  width: 100%;
+  height: 100%;
+}
+
 .navicons li {
   width: 100%;
   padding: 1em 0;
@@ -64,8 +71,7 @@ nav li {
 }
 
 .navicons i {
-  color: white;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 .navicons i.wideboi {
@@ -74,8 +80,20 @@ nav li {
 }
 
 .user-icon svg {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
+}
+
+.fa-home {
+  color: #2b87ff;
+}
+
+.fa-chart-bar {
+  color: #ffb90a;
+}
+
+.fa-sticky-note {
+  color: #71ce67;
 }
 /*# sourceMappingURL=style.css.map */

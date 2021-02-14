@@ -64,7 +64,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             $durationsum = $events[0];
             if ($durationsum != 0){
         		?>
-			<div class="bar stackeder" data-percent='<?= $durationsum?>'><span class="labelstack"><?= $t['topicname'] ?></span></div>
+			<div class="bar stackeder class<?= $t['topicname'] ?>" data-percent='<?= $durationsum?>'><span class="labelstack"><?= $t['topicname'] ?></span></div>
 			<?php }}?>
       	</div>
 		<!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->
@@ -76,7 +76,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$events = $eventquery->fetch_all(MYSQLI_ASSOC);
 			?>
 
-			<div class="chart">
+			<div class="chart <?= $t['topicname'] ?>">
 			<div class="label">
 				<span class="labeltext"><?= $t['topicname'] ?></span>
 			</div>

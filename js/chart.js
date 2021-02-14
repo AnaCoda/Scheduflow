@@ -2,9 +2,9 @@
 // Do this for every bar (will change to only selected bar)
 $('.bar').each(function(i) {
     if (!$(this).hasClass('stackeder')) {
-        $(this).width(parseFloat($(this).attr('data-percent')) * 5 + 112)
+        $(this).width(parseFloat($(this).attr('data-percent')) * 4 + 112)
     } else {
-        $(this).width(parseFloat($(this).attr('data-percent')) * 5)
+        $(this).width(parseFloat($(this).attr('data-percent')) * 4)
     }
     if (!$(this).hasClass('.moving-bar')) {
         $(this).append('<span class="countx"></span>')
@@ -14,20 +14,28 @@ $('.countx').each(function() {
     $(this).text($(this).parent('.bar').attr('data-percent'));
 });
 $('.bar').click(function() {
-    $(this).addClass('moving-bar');
+    $(this).addClass('moving-bar')
+    var parClass = $(this).parent('.chart').attr('class').split(' ')[1]
     $('.countx').each(function() {
+        if ($(this).parent('.bar').hasClass('class' + parClass)) {
+            console.log('yay');
+            $(this).parent('.bar').addClass('moving-bar');
+
+        }
         if ($(this).parent('.bar').hasClass('moving-bar')) {
             $(this).text('');
+            console.log('yay2');
         }
+
     });
     setTimeout(function() {
 
         function progress(timeleft, timetotal, $element) {
 
             if (!$element.hasClass('stackeder')) {
-                var progressBarWidth = timeleft * 5 + 112;
+                var progressBarWidth = timeleft * 4 + 112;
             } else {
-                var progressBarWidth = timeleft * 5;
+                var progressBarWidth = timeleft * 4;
             }
 
 
@@ -53,6 +61,7 @@ $('.bar').click(function() {
         $('.moving-bar').each(function(i) {
             var $bar = $(this);
             $moving_time = parseInt($bar.attr('data-percent'))
+            console.log($bar.attr('class'))
             progress(parseInt($bar.attr('data-percent')), 200, $bar);
         });
         $('.count').each(

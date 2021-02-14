@@ -12,7 +12,7 @@
 		<ul class="navicons topicons">
 			<a href="/index.php"><li><i class="fas fa-home wideboi"></i></li></a>
 			<a href=""><li><i class="fas fa-chart-bar wideboi"></i></li></a>
-			<a href=""><li><i class="fas fa-sticky-note"></i></li></a>
+			<a href="/eventadd.php"><li><i class="fas fa-sticky-note"></i></li></a>
 		</ul>
 		<ul class="navicons boticons">
 			<!-- <li><i class="fas fa-cog settings-icon"></i></li> -->

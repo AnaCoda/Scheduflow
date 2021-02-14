@@ -10,10 +10,18 @@
   text-transform: capitalize;
 }
 
+.container h1 {
+  font-size: 3em;
+}
+
 .container p {
   font-size: 1.5em;
   line-height: 1.2em;
   margin-bottom: 1em;
+}
+
+.container .time-button {
+  margin: 0 1em;
 }
 
 .container .form-input {
@@ -45,5 +53,39 @@
 .container .submit-button {
   height: 2.4em;
   width: calc(70% + 1em);
+}
+
+.container .choose-time-button {
+  height: 3em;
+  width: 15em;
+}
+
+.container .date-picker {
+  line-height: initial;
+}
+
+.container .topic-choosing {
+  height: 2.5em;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.container #timeminutes, .container #timehours {
+  height: 2.5em;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.container #timeminutes {
+  margin-right: 1em;
+}
+
+.cont-for-eventadd {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  top: 15%;
 }
 /*# sourceMappingURL=login.css.map */

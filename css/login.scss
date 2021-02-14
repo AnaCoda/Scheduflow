@@ -10,10 +10,18 @@
 
     }
 
+    h1 {
+        font-size: 3em;
+    }
+
     p {
         font-size: 1.5em;
         line-height: 1.2em;
         margin-bottom: 1em;
+    }
+
+    .time-button {
+        margin: 0 1em;
     }
 
     .form-input {
@@ -47,5 +55,31 @@
         width: calc(70% + 1em);
     }
 
+    .choose-time-button {
+        height: 3em;
+        width: 15em;
+    }
 
+    .date-picker {
+        line-height: initial;
+    }
+
+    .topic-choosing {
+        height: 2.5em;
+        width: min-content;
+    }
+
+    #timeminutes, #timehours {
+        height: 2.5em;
+        width: min-content;
+    }
+
+    #timeminutes {
+        margin-right: 1em;
+    }
+}
+
+.cont-for-eventadd {
+    height: min-content;
+    top: 15%;
 }

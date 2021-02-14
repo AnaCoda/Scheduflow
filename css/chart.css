@@ -1,3 +1,17 @@
+.chart {
+    overflow: hidden !important;
+    width: 0% !important;
+}
+
+.stacked {
+    display: flex !important;
+    height: 60px !important;
+    color: #fff !important;
+    float: left !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,22 +40,22 @@ h1 {
     text-transform: uppercase;
 }
 
-.wrap {
-    width: 50%;
-    margin: 0 auto;
-}
-
 .bar {
     background: #ff413d;
-    width: 0px;
-    margin: .25em 0;
+    /*width: 0px;*/
+    /*margin: .25em 0;*/
     color: #fff;
-    position: relative;
-    clear: both;
+    /*position: relative;
+    clear: both;*/
 }
 
 .bar:nth-of-type(odd) {
     background: #ff6461;
+}
+
+.row {
+    margin-bottom: 1.5em !important;
+    display: block !important;
 }
 
 .bar .label {

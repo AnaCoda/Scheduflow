@@ -29,9 +29,17 @@
 <h1>Your Schedule</h1>
 <?php 
           foreach ($topics as $t) { ?>
-          <div class="bar" data-percent="20"> <span class="label"><?= $t['topicname'] ?></span></div>
+          <!--<div class="bar" data-percent="20"> <span class="label"></span></div>-->
+          <div class="row">
+          <div id="container chart">
+        <div class="bar stacked" data-percent="40"><span class="label second"><?= $t['topicname'] ?></span></div><div class="bar stacked stackeder" data-percent="10"><span class="labelstack"></span></div>
+                  </div>
+          </div>
+          </div>
 <?php } ?>
-<div class="bar" id='moving-bar' data-percent="10"><span class="label second">jQuery</span></div>
+<div id="container chart">
+<div class="bar stacked" data-percent="40"><span class="label second">jQuery</span></div><div class="bar stacked stackeder" id='moving-bar' data-percent="10"><span class="labelstack"></span></div>
+          </div>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

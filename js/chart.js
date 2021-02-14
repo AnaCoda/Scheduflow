@@ -4,9 +4,15 @@ setTimeout(function start() {
 
     function progress(timeleft, timetotal, $element) {
 
+        if (!$element.hasClass('stackeder')) {
+            var progressBarWidth = timeleft * 10 + 112;
+        } else {
+            var progressBarWidth = timeleft * 10;
+        }
 
-        var progressBarWidth = timeleft * 10 + 112;
+
         console.log(progressBarWidth);
+        console.log($element.attr('class').split(" "));
         $element.animate({ width: progressBarWidth }, 1000);
         $element.append('<span class="count"></span>')
         if (timeleft > 0) {
@@ -22,7 +28,11 @@ setTimeout(function start() {
     }
     // Do this for every bar (will change to only selected bar)
     $('.bar').each(function(i) {
-        $(this).width(parseFloat($(this).attr('data-percent')) * 10 + 112)
+        if ($(this).hasClass('stackeder')) {
+            $(this).width(parseFloat($(this).attr('data-percent')) * 10 + 112)
+        } else {
+            $(this).width(parseFloat($(this).attr('data-percent')) * 10)
+        }
         if (!$(this).is('#moving-bar')) {
             $(this).append('<span class="countx"></span>')
         }

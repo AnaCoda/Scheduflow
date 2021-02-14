@@ -26,7 +26,7 @@
 }
 
 .chart-container {
-  border-color: #ddd;
+  border-color: #71ce67;
 }
 
 .chart {
@@ -72,13 +72,20 @@ body {
   background-color: #71ce67;
 }
 
+.wrap > .chart:nth-of-type(3n + 1) .bar {
+  background-color: #ffb90a;
+}
+
 .bar:nth-of-type(even) {
   background: #ff6461;
 }
 
 .label {
   height: 60px;
-  width: 7em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0 1em;
   /* display: inline-block; */
   position: static;
   z-index: 2;
@@ -115,6 +122,11 @@ body {
   border-color: #71ce67;
 }
 
+.wrap > .chart:nth-of-type(3n + 1) > .label {
+  color: #ffb90a;
+  border-color: #ffb90a;
+}
+
 .labelstack, .count, .countx {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -134,5 +146,9 @@ body {
 
 .labelstack {
   right: 2em;
+}
+
+.wrap > .chart {
+  border-color: #ffb90a;
 }
 /*# sourceMappingURL=chart.css.map */

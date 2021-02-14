@@ -26,7 +26,7 @@ $BORDERCOLORS: #2b87ff, #ffb90a, #71ce67;
 }
 
 .chart-container {
-    border-color: #ddd
+    border-color: nth($BORDERCOLORS, 3);
 }
 
 .chart {
@@ -63,6 +63,10 @@ body {
     }
 }
 
+.wrap > .chart:nth-of-type(#{length($BORDERCOLORS)}n + 1) .bar {
+    background-color: nth($BORDERCOLORS, 2);
+}
+
 .bar:nth-of-type(even) {
     background: #ff6461;
 }
@@ -85,7 +89,8 @@ body {
 
 .label {
     height: 60px;
-    width: 7em;
+    width: max-content;
+    padding: 0 1em;
     /* display: inline-block; */
     position: static;
     z-index: 2;
@@ -110,6 +115,13 @@ body {
     }
 }
 
+.wrap > .chart:nth-of-type(#{length($BORDERCOLORS)}n + 1) > .label {
+    color: nth($BORDERCOLORS, 2);
+    border-color: nth($BORDERCOLORS, 2);
+    // color: scale-color(nth($BORDERCOLORS, $i), $lightness: 15%);
+    // border-color: scale-color(nth($BORDERCOLORS, $i), $lightness: 15%);
+}
+
 .labelstack, .count, .countx {
     display: flex;
     justify-content: center;
@@ -125,4 +137,8 @@ body {
 
 .labelstack {
     right: 2em;
+}
+
+.wrap > .chart {
+    border-color: nth($BORDERCOLORS, 2);
 }

@@ -20,7 +20,7 @@ CREATE TABLE `events` (
   `user_id` int(10) NOT NULL,
   `eventtopic` text NOT NULL,
   `eventname` text NOT NULL,
-  `eventtime` DATE NOT NULL, /*Only if the eventtype is Day(0) or sUntil(2)*/
+  `eventtime` DATE, /*Only if the eventtype is Day(0) or sUntil(2)*/
   `eventtype` int(1) NOT NULL, /*(0)Single day, deletes itself after completion. (1)Indefinite, requires user deletion. (2)Until, will delete after certain calendar day*/
   PRIMARY KEY (`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
